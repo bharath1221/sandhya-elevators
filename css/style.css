@@ -32,6 +32,18 @@ body {
     z-index: 1000;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    margin-right: 1rem;
+}
+
 .logo h1 {
     color: var(--primary-color);
     font-size: 1.8rem;
@@ -64,6 +76,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(rgba(26, 95, 122, 0.9), rgba(26, 95, 122, 0.9)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content h1 {
@@ -97,10 +112,26 @@ section h2 {
     margin-bottom: 2rem;
 }
 
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 /* Products Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -117,15 +148,78 @@ section h2 {
     transform: translateY(-5px);
 }
 
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1rem;
+}
+
 .product-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
+.features-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.features-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* MRL Series */
+.mrl-series {
+    background-color: var(--light-bg);
+}
+
+.mrl-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.mrl-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mrl-features ul {
+    list-style: none;
+}
+
+.mrl-features li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.mrl-features li::before {
+    content: "✓";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
 /* Accessories Grid */
 .accessories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -134,6 +228,53 @@ section h2 {
     padding: 1.5rem;
     background-color: var(--light-bg);
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.accessory-item:hover {
+    transform: translateY(-5px);
+}
+
+.accessory-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Safety Section */
+.safety-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.safety-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.safety-features {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.safety-features li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.safety-features li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
 }
 
 /* Contact Section */
@@ -151,6 +292,12 @@ section h2 {
 
 .contact-item {
     text-align: center;
+}
+
+.contact-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
 }
 
 .contact-item a {
@@ -186,5 +333,17 @@ footer {
 
     .hero-content h1 {
         font-size: 2rem;
+    }
+
+    .about-content,
+    .mrl-content,
+    .safety-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image,
+    .mrl-image,
+    .safety-image {
+        order: -1;
     }
 } 
